@@ -1,0 +1,46 @@
+{
+    "name": "biml",
+    "displayName": "Biml Language",
+    "description": "Biml language suppport for VS Code",
+    "version": "0.0.1",
+    "publisher": "Varigence",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "icon": "icon.png",
+    "categories": [
+        "Languages"
+    ],
+    "galleryBanner": {
+		"color": "#EA7D28",
+		"theme": "light"
+    },
+    "bugs": {
+		"url": "https://github.com/kasik96/Swift-VS-Code/issues",
+		"email": "kasemartin@icloud.com"
+	},
+	"homepage": "https://github.com/kasik96/Swift-VS-Code",
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/kasik96/Swift-VS-Code"
+	},
+    "contributes": {
+        "languages": [{
+            "id": "biml",
+            "aliases": ["Biml", "biml"],
+            "extensions": [".biml"],
+            "configuration": "./biml.configuration.json"
+        }],
+        "grammars": [{
+            "language": "biml",
+            "scopeName": "source.biml",
+            "path": "./syntaxes/biml.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+				"language": "biml",
+				"path": "./snippets/snippets.json"
+			}
+        ]
+    }
+}
