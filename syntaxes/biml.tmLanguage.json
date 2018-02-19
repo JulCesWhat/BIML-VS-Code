@@ -134,14 +134,17 @@
 		{
 			"include": "#bare-ampersand"
 		},
+
+
+
 		{
-			"begin": "<%@",
+			"begin": "<#@",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.begin.xml"
 				}
 			},
-			"end": "%>",
+			"end": "#>",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.end.xml"
@@ -150,28 +153,28 @@
 			"name": "source.java-props.embedded.xml",
 			"patterns": [
 				{
-					"match": "page|include|taglib",
-					"name": "keyword.other.page-props.xml"
+					"match": "template|language|tier",
+					"name": "constant.character.parameter-entity.xml"
 				}
 			]
 		},
 		{
-			"begin": "<%[!=]?(?!--)",
+			"begin": "<#[=]?",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.begin.xml"
 				}
 			},
-			"end": "(?!--)%>",
+			"end": "#>",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.end.xml"
 				}
 			},
-			"name": "source.java.embedded.xml",
+			"name": "source.csvb.embedded.xml",
 			"patterns": [
 				{
-					"include": "source.java"
+					"include": "source.asp.vb.net"
 				}
 			]
 		},
@@ -352,6 +355,26 @@
 			},
 			"end": "--%?>",
 			"name": "comment.block.xml"
+		},
+
+
+
+		"embedded-code": {
+
+		},
+		"cs": {
+			"patterns": [
+				{
+					"include": "source.cs"
+				}
+			]
+		},
+		"vb": {
+			"patterns": [
+				{
+					"include": "source.asp.vb.net"
+				}
+			]
 		}
 	},
 	"scopeName": "source.biml"
