@@ -1,7 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Biml",
+	"name": "BIML",
 	"patterns": [
+		{
+			"include": "#biml"
+		},
+		{
+			"include": "#comments"
+		},
 		{
 			"begin": "(<\\?)\\s*([-_a-zA-Z0-9]+)",
 			"captures": {
@@ -47,9 +53,6 @@
 					"include": "#internalSubset"
 				}
 			]
-		},
-		{
-			"include": "#comments"
 		},
 		{
 			"begin": "(<)((?:([-_a-zA-Z0-9]+)(:))?([-_a-zA-Z0-9:]+))(?=(\\s[^>]*)?></\\2>)",
@@ -133,50 +136,6 @@
 		},
 		{
 			"include": "#bare-ampersand"
-		},
-
-
-
-		{
-			"begin": "<#@",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.begin.xml"
-				}
-			},
-			"end": "#>",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.end.xml"
-				}
-			},
-			"name": "source.java-props.embedded.xml",
-			"patterns": [
-				{
-					"match": "template|language|tier",
-					"name": "constant.character.parameter-entity.xml"
-				}
-			]
-		},
-		{
-			"begin": "<#[=]?",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.begin.xml"
-				}
-			},
-			"end": "#>",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.end.xml"
-				}
-			},
-			"name": "source.csvb.embedded.xml",
-			"patterns": [
-				{
-					"include": "source.asp.vb.net"
-				}
-			]
 		},
 		{
 			"begin": "<!\\[CDATA\\[",
@@ -356,23 +315,23 @@
 			"end": "--%?>",
 			"name": "comment.block.xml"
 		},
-
-
-
-		"embedded-code": {
-
-		},
-		"cs": {
-			"patterns": [
-				{
-					"include": "source.cs"
+		"biml": {
+			"begin": "(<#@)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.begin.xml"
 				}
-			]
-		},
-		"vb": {
+			},
+			"end": "(#>)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.end.xml"
+				}
+			},
+			"name": "source.csharp.embedded.xml",
 			"patterns": [
 				{
-					"include": "source.asp.vb.net"
+					"include": "source.java"
 				}
 			]
 		}

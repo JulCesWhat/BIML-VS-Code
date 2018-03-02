@@ -7,7 +7,7 @@
         "node_shrinkwrap": true,
         "coverage": true,
         "target": true,
-        "test": true,
+        //"test": true,
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,

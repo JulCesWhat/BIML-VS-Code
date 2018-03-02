@@ -1,0 +1,25 @@
+<#@ template language="VB" tier="2" #>
+<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+  <Packages>
+    <Package Name="My Package Driver" ConstraintMode="Linear" AutoCreateConfigurationsType="None">
+      <Tasks>
+        <# foreach (var package in RootNode.Packages) { #>
+        <ExecutePackage Name="Run <#=package.Name#>">
+          <Package PackageName='<#=package.Name#>' />
+        </ExecutePackage>
+        <# } #>
+      </Tasks>
+    </Package>
+  </Packages>
+</Biml>
+
+
+<#@
+ If IsPrime Then
+    foundPrime = prime_possible
+    If CurrentprimeSequence Mod 100000 = 0 Then
+      Debug.Print(CStr(CurrentprimeSequence) + " " + CStr(foundPrime) + " " + sw.Elapsed().ToString)
+    End If
+      CurrentprimeSequence += 1
+  End If 
+#>

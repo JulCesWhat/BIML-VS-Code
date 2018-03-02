@@ -7,13 +7,13 @@
     "engines": {
         "vscode": "^1.19.0"
     },
-    "icon": "images/bimlIcon.png",
+    "icon": "./images/bimlIcon.png",
     "categories": [
         "Languages"
     ],
     "bugs": {
 		"url": "https://github.com/kasik96/Swift-VS-Code/issues",
-		"email": "kasemartin@icloud.com"
+		"email": "cesar.whatley@varigence.com"
 	},
     "repository": {
 		"type": "git",
