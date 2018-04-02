@@ -3,27 +3,21 @@
 	"name": "BIML",
 	"patterns": [
 		{
-			"include": "#biml"
-		},
-		{
-			"include": "#comments"
-		},
-		{
 			"begin": "(<\\?)\\s*([-_a-zA-Z0-9]+)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.xml"
+					"name": "punctuation.definition.tag.biml"
 				},
 				"2": {
-					"name": "entity.name.tag.xml"
+					"name": "entity.name.tag.biml"
 				}
 			},
 			"end": "(\\?>)",
-			"name": "meta.tag.preprocessor.xml",
+			"name": "meta.tag.preprocessor.biml",
 			"patterns": [
 				{
 					"match": " ([a-zA-Z-]+)",
-					"name": "entity.other.attribute-name.xml"
+					"name": "entity.other.attribute-name.biml"
 				},
 				{
 					"include": "#doublequotedString"
@@ -37,17 +31,17 @@
 			"begin": "(<!)(DOCTYPE)\\s+([:a-zA-Z_][:a-zA-Z0-9_.-]*)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.xml"
+					"name": "punctuation.definition.tag.biml"
 				},
 				"2": {
-					"name": "keyword.other.doctype.xml"
+					"name": "keyword.other.doctype.biml"
 				},
 				"3": {
-					"name": "variable.language.documentroot.xml"
+					"name": "variable.language.documentroot.biml"
 				}
 			},
 			"end": "\\s*(>)",
-			"name": "meta.tag.sgml.doctype.xml",
+			"name": "meta.tag.sgml.doctype.biml",
 			"patterns": [
 				{
 					"include": "#internalSubset"
@@ -55,49 +49,52 @@
 			]
 		},
 		{
+			"include": "#comments"
+		},
+		{
 			"begin": "(<)((?:([-_a-zA-Z0-9]+)(:))?([-_a-zA-Z0-9:]+))(?=(\\s[^>]*)?></\\2>)",
 			"beginCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.xml"
+					"name": "punctuation.definition.tag.biml"
 				},
 				"2": {
-					"name": "entity.name.tag.xml"
+					"name": "entity.name.tag.biml"
 				},
 				"3": {
-					"name": "entity.name.tag.namespace.xml"
+					"name": "entity.name.tag.namespace.biml"
 				},
 				"4": {
-					"name": "punctuation.separator.namespace.xml"
+					"name": "punctuation.separator.namespace.biml"
 				},
 				"5": {
-					"name": "entity.name.tag.localname.xml"
+					"name": "entity.name.tag.localname.biml"
 				}
 			},
 			"end": "(>)(</)((?:([-_a-zA-Z0-9]+)(:))?([-_a-zA-Z0-9:]+))(>)",
 			"endCaptures": {
 				"1": {
-					"name": "punctuation.definition.tag.xml"
+					"name": "punctuation.definition.tag.biml"
 				},
 				"2": {
-					"name": "punctuation.definition.tag.xml"
+					"name": "punctuation.definition.tag.biml"
 				},
 				"3": {
-					"name": "entity.name.tag.xml"
+					"name": "entity.name.tag.biml"
 				},
 				"4": {
-					"name": "entity.name.tag.namespace.xml"
+					"name": "entity.name.tag.namespace.biml"
 				},
 				"5": {
-					"name": "punctuation.separator.namespace.xml"
+					"name": "punctuation.separator.namespace.biml"
 				},
 				"6": {
-					"name": "entity.name.tag.localname.xml"
+					"name": "entity.name.tag.localname.biml"
 				},
 				"7": {
-					"name": "punctuation.definition.tag.xml"
+					"name": "punctuation.definition.tag.biml"
 				}
 			},
-			"name": "meta.tag.no-content.xml",
+			"name": "meta.tag.no-content.biml",
 			"patterns": [
 				{
 					"include": "#tagStuff"
@@ -108,23 +105,23 @@
 			"begin": "(</?)(?:([-\\w\\.]+)((:)))?([-\\w\\.:]+)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.xml"
+					"name": "punctuation.definition.tag.biml"
 				},
 				"2": {
-					"name": "entity.name.tag.namespace.xml"
+					"name": "entity.name.tag.namespace.biml"
 				},
 				"3": {
-					"name": "entity.name.tag.xml"
+					"name": "entity.name.tag.biml"
 				},
 				"4": {
-					"name": "punctuation.separator.namespace.xml"
+					"name": "punctuation.separator.namespace.biml"
 				},
 				"5": {
-					"name": "entity.name.tag.localname.xml"
+					"name": "entity.name.tag.localname.biml"
 				}
 			},
 			"end": "(/?>)",
-			"name": "meta.tag.xml",
+			"name": "meta.tag.biml",
 			"patterns": [
 				{
 					"include": "#tagStuff"
@@ -138,19 +135,63 @@
 			"include": "#bare-ampersand"
 		},
 		{
+			"begin": "(<#@)\\s*(template)\\s*(#>)\\s*(<)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.begin.biml"
+				},
+				"2": {
+					"name": "punctuation.section.embedded.begin.biml"
+				}
+			},
+			"end": "(>)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.end.biml"
+				}
+			},
+			"name": "source.csharp-props.embedded.biml",
+			"patterns": [
+				{
+					"match": "language",
+					"name": "keyword.other.page-props.biml"
+				}
+			]
+		},
+		{
+			"begin": "<#[+=]?(?!--)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.begin.biml"
+				}
+			},
+			"end": "(?!--)#>",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.end.biml"
+				}
+			},
+			"name": "source.csharp.embedded.biml",
+			"patterns": [
+				{
+					"include": "source.cs"
+				}
+			]
+		},
+		{
 			"begin": "<!\\[CDATA\\[",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.begin.xml"
+					"name": "punctuation.definition.string.begin.biml"
 				}
 			},
 			"end": "]]>",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.end.xml"
+					"name": "punctuation.definition.string.end.biml"
 				}
 			},
-			"name": "string.unquoted.cdata.xml"
+			"name": "string.unquoted.cdata.biml"
 		}
 	],
 	"repository": {
@@ -158,19 +199,19 @@
 			"begin": "(<!)(ENTITY)\\s+(%\\s+)?([:a-zA-Z_][:a-zA-Z0-9_.-]*)(\\s+(?:SYSTEM|PUBLIC)\\s+)?",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.tag.xml"
+					"name": "punctuation.definition.tag.biml"
 				},
 				"2": {
-					"name": "keyword.other.entity.xml"
+					"name": "keyword.other.entity.biml"
 				},
 				"3": {
-					"name": "punctuation.definition.entity.xml"
+					"name": "punctuation.definition.entity.biml"
 				},
 				"4": {
-					"name": "variable.language.entity.xml"
+					"name": "variable.language.entity.biml"
 				},
 				"5": {
-					"name": "keyword.other.entitytype.xml"
+					"name": "keyword.other.entitytype.biml"
 				}
 			},
 			"end": "(>)",
@@ -185,22 +226,22 @@
 		},
 		"bare-ampersand": {
 			"match": "&",
-			"name": "invalid.illegal.bad-ampersand.xml"
+			"name": "invalid.illegal.bad-ampersand.biml"
 		},
 		"doublequotedString": {
 			"begin": "\"",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.begin.xml"
+					"name": "punctuation.definition.string.begin.biml"
 				}
 			},
 			"end": "\"",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.end.xml"
+					"name": "punctuation.definition.string.end.biml"
 				}
 			},
-			"name": "string.quoted.double.xml",
+			"name": "string.quoted.double.biml",
 			"patterns": [
 				{
 					"include": "#entity"
@@ -213,24 +254,24 @@
 		"entity": {
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.constant.xml"
+					"name": "punctuation.definition.constant.biml"
 				},
 				"3": {
-					"name": "punctuation.definition.constant.xml"
+					"name": "punctuation.definition.constant.biml"
 				}
 			},
 			"match": "(&)([:a-zA-Z_][:a-zA-Z0-9_.-]*|#[0-9]+|#x[0-9a-fA-F]+)(;)",
-			"name": "constant.character.entity.xml"
+			"name": "constant.character.entity.biml"
 		},
 		"internalSubset": {
 			"begin": "(\\[)",
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.constant.xml"
+					"name": "punctuation.definition.constant.biml"
 				}
 			},
 			"end": "(\\])",
-			"name": "meta.internalsubset.xml",
+			"name": "meta.internalsubset.biml",
 			"patterns": [
 				{
 					"include": "#EntityDecl"
@@ -246,29 +287,29 @@
 		"parameterEntity": {
 			"captures": {
 				"1": {
-					"name": "punctuation.definition.constant.xml"
+					"name": "punctuation.definition.constant.biml"
 				},
 				"3": {
-					"name": "punctuation.definition.constant.xml"
+					"name": "punctuation.definition.constant.biml"
 				}
 			},
 			"match": "(%)([:a-zA-Z_][:a-zA-Z0-9_.-]*)(;)",
-			"name": "constant.character.parameter-entity.xml"
+			"name": "constant.character.parameter-entity.biml"
 		},
 		"singlequotedString": {
 			"begin": "'",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.begin.xml"
+					"name": "punctuation.definition.string.begin.biml"
 				}
 			},
 			"end": "'",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.definition.string.end.xml"
+					"name": "punctuation.definition.string.end.biml"
 				}
 			},
-			"name": "string.quoted.single.xml",
+			"name": "string.quoted.single.biml",
 			"patterns": [
 				{
 					"include": "#entity"
@@ -283,16 +324,16 @@
 				{
 					"captures": {
 						"1": {
-							"name": "entity.other.attribute-name.namespace.xml"
+							"name": "entity.other.attribute-name.namespace.biml"
 						},
 						"2": {
-							"name": "entity.other.attribute-name.xml"
+							"name": "entity.other.attribute-name.biml"
 						},
 						"3": {
-							"name": "punctuation.separator.namespace.xml"
+							"name": "punctuation.separator.namespace.biml"
 						},
 						"4": {
-							"name": "entity.other.attribute-name.localname.xml"
+							"name": "entity.other.attribute-name.localname.biml"
 						}
 					},
 					"match": "(?:^|\\s+)(?:([-\\w.]+)((:)))?([-\\w.:]+)\\s*="
@@ -309,31 +350,11 @@
 			"begin": "<[!%]--",
 			"captures": {
 				"0": {
-					"name": "punctuation.definition.comment.xml"
+					"name": "punctuation.definition.comment.biml"
 				}
 			},
 			"end": "--%?>",
-			"name": "comment.block.xml"
-		},
-		"biml": {
-			"begin": "(<#@)",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.begin.xml"
-				}
-			},
-			"end": "(#>)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.end.xml"
-				}
-			},
-			"name": "source.csharp.embedded.xml",
-			"patterns": [
-				{
-					"include": "source.java"
-				}
-			]
+			"name": "comment.block.biml"
 		}
 	},
 	"scopeName": "source.biml"

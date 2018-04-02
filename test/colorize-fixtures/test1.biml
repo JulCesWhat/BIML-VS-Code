@@ -1,0 +1,35 @@
+<!-- This will be with no heading so it will default to C# language. -->
+
+<#=
+    class Hello {
+        static void Main() {
+            Console.WriteLine("Hello World!");
+
+            // Keep the console window open in debug mode.
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+    }
+#>
+
+<project>
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="oata.HelloWorld"/>
+            </manifest>
+            <#        Console.WriteLine("Press any key to exit.");  #>
+        </jar>
+    </target>
+    <!-- The stuff below was added for extra tokenizer testing -->
+   <character id="Lucy">
+        <hr:name>Lucy</hr:name>
+        <hr:born>1952-03-03</hr:born>
+        <qualification>bossy, crabby and selfish</qualification>
+   </character>
+    <VisualState.Setters>
+        <Setter Target="inputPanel.Orientation" Value="Vertical"/>
+        <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
+    </VisualState.Setters>
+</project>
