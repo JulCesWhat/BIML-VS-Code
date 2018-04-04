@@ -1,6 +1,7 @@
 <!-- This will be with a C# heading to use the C# language -->
 
-<#@ template #>           <language>
+<#@ language capi="shishi" #><shi></shi>
+
 
 <Biml xmlns="http://schemas.varigence.com/biml.xsd">
   <Packages>
@@ -17,12 +18,17 @@
 </Biml>
 
 
-<#
- If IsPrime Then
-    foundPrime = prime_possible
-    If CurrentprimeSequence Mod 100000 = 0 Then
-      Debug.Print(CStr(CurrentprimeSequence) + " " + CStr(foundPrime) + " " + sw.Elapsed().ToString)
-    End If
-      CurrentprimeSequence += 1
-  End If 
+<#+
+    class Hello {
+        static void Main() {
+            Console.WriteLine("Hello World!");
+
+            // Keep the console window open in debug mode.
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+    }
 #>
+
+<!-- https://stackoverflow.com/questions/22937618/reference-what-does-this-regex-mean 
+     ==  good reference for regex information -->

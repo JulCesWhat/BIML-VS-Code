@@ -135,16 +135,16 @@
 			"include": "#bare-ampersand"
 		},
 		{
-			"begin": "(<#@)\\s*(template)\\s*(#>)\\s*(<)",
+			"begin": "(<#@)\\s*([-_a-zA-Z0-9:]+)(?=([^#>]*)?(#>)<([-_a-zA-Z0-9:]+)></\\5>)",
 			"beginCaptures": {
-				"0": {
+				"1": {
 					"name": "punctuation.section.embedded.begin.biml"
 				},
 				"2": {
 					"name": "punctuation.section.embedded.begin.biml"
 				}
 			},
-			"end": "(>)",
+			"end": "(?=(</([-_a-zA-Z0-9:]+)>))",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.end.biml"
@@ -153,13 +153,20 @@
 			"name": "source.csharp-props.embedded.biml",
 			"patterns": [
 				{
-					"match": "language",
-					"name": "keyword.other.page-props.biml"
+					"include": "#tagStuff"
+				},
+				{
+					"captures": {
+						"0": {
+							"name": "punctuation.section.embedded.end.biml"
+						}
+					},
+					"match": "(#>)(<([-_a-zA-Z0-9:]+)></([-_a-zA-Z0-9:]+)>)"
 				}
 			]
 		},
 		{
-			"begin": "<#[+=]?(?!--)",
+			"begin": "<#[!=]?(?!--)",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.begin.biml"

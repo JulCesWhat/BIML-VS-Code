@@ -1,6 +1,6 @@
 <!-- This will be with no heading so it will default to C# language. -->
 
-<#=
+<#+
     class Hello {
         static void Main() {
             Console.WriteLine("Hello World!");
