@@ -1,26 +1,14 @@
-<!-- This will be with a C# heading to use the C# language -->
-
-<#@ language capi="shishi" #><shi></shi>
 
 
-<Biml xmlns="http://schemas.varigence.com/biml.xsd">
-  <Packages>
-    <Package Name="My Package Driver" ConstraintMode="Linear" AutoCreateConfigurationsType="None">
-      <Tasks>
-        <% foreach (var package in RootNode.Packages) { %>
-        <ExecutePackage Name="Run <#=package.Name#>">
-          <Package PackageName='<#=package.Name#>' />
-        </ExecutePackage>
-        <% } %>
-      </Tasks>
-    </Package>
-  </Packages>
-</Biml>
-
-
-<#+
-    class Hello {
-        static void Main() {
+<%=
+    // A Hello World! program in C#.
+using System;
+namespace HelloWorld
+{
+    class Hello 
+    {
+        static void Main() 
+        {
             Console.WriteLine("Hello World!");
 
             // Keep the console window open in debug mode.
@@ -28,7 +16,27 @@
             Console.ReadKey();
         }
     }
-#>
+}
+%>
 
-<!-- https://stackoverflow.com/questions/22937618/reference-what-does-this-regex-mean 
-     ==  good reference for regex information -->
+<project>
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="oata.HelloWorld"/>
+            </manifest>
+            <%        System.out.println("Hello Java");  %>
+        </jar>
+    </target>
+    <!-- The stuff below was added for extra tokenizer testing -->
+   <character id="Lucy">
+        <hr:name>Lucy</hr:name>
+        <hr:born>1952-03-03</hr:born>
+        <qualification>bossy, crabby and selfish</qualification>
+   </character>
+    <VisualState.Setters>
+        <Setter Target="inputPanel.Orientation" Value="Vertical"/>
+        <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
+    </VisualState.Setters>
+</project>

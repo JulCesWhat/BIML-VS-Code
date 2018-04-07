@@ -11,25 +11,29 @@
     "categories": [
         "Languages"
     ],
-    "bugs": {
-		"url": "https://github.com/kasik96/Swift-VS-Code/issues",
-		"email": "cesar.whatley@varigence.com"
-	},
-    "repository": {
-		"type": "git",
-		"url": "https://github.com/kasik96/Swift-VS-Code"
-	},
     "contributes": {
         "languages": [{
-            "id": "biml",
+            "id": "bimlcs",
             "aliases": ["Biml", "biml"],
+            "extensions": [".biml"],
+            "configuration": "./biml.configuration.json"
+        },
+        {
+            "id": "bimlvb",
+            "aliases": ["Biml", "biml"],
+            "firstLine" : "(\\<#@\\s+template\\s+language=\"VB\")|(\\<#@\\s+template\\s+language='VB')",
             "extensions": [".biml"],
             "configuration": "./biml.configuration.json"
         }],
         "grammars": [{
-            "language": "biml",
-            "scopeName": "source.biml",
-            "path": "./syntaxes/biml.tmLanguage.json"
+            "language": "bimlcs",
+            "scopeName": "source.biml.cs",
+            "path": "./syntaxes/bimlcs.tmLanguage.json"
+        },
+        {
+            "language": "bimlvb",
+            "scopeName": "source.biml.vb",
+            "path": "./syntaxes/bimlvb.tmLanguage.json"
         }],
         "snippets": [
             {

@@ -1,6 +1,14 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "BIML",
+	"information_for_contributors": [
+		"This file has been created by Varigence.",
+		"If you want to provide a fix or improvement, please create a pull request against the original repository.",
+		"Once accepted there, we are happy to receive an update request."
+	],
+	"scopeName": "source.biml.cs",
+	"name": "bimlcs",
+	"fileTypes": [
+		"biml"
+	],
 	"patterns": [
 		{
 			"begin": "(<\\?)\\s*([-_a-zA-Z0-9]+)",
@@ -135,50 +143,40 @@
 			"include": "#bare-ampersand"
 		},
 		{
-			"begin": "(<#@)\\s*([-_a-zA-Z0-9:]+)(?=([^#>]*)?(#>)<([-_a-zA-Z0-9:]+)></\\5>)",
+			"begin": "<%@",
 			"beginCaptures": {
-				"1": {
-					"name": "punctuation.section.embedded.begin.biml"
-				},
-				"2": {
+				"0": {
 					"name": "punctuation.section.embedded.begin.biml"
 				}
 			},
-			"end": "(?=(</([-_a-zA-Z0-9:]+)>))",
+			"end": "%>",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.end.biml"
 				}
 			},
-			"name": "source.csharp-props.embedded.biml",
+			"name": "source.cs-props.embedded.biml",
 			"patterns": [
 				{
-					"include": "#tagStuff"
-				},
-				{
-					"captures": {
-						"0": {
-							"name": "punctuation.section.embedded.end.biml"
-						}
-					},
-					"match": "(#>)(<([-_a-zA-Z0-9:]+)></([-_a-zA-Z0-9:]+)>)"
+					"match": "page|include|taglib",
+					"name": "keyword.other.page-props.biml"
 				}
 			]
 		},
 		{
-			"begin": "<#[!=]?(?!--)",
+			"begin": "<%[!=]?(?!--)",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.begin.biml"
 				}
 			},
-			"end": "(?!--)#>",
+			"end": "(?!--)%>",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.section.embedded.end.biml"
 				}
 			},
-			"name": "source.csharp.embedded.biml",
+			"name": "source.cs.embedded.biml",
 			"patterns": [
 				{
 					"include": "source.cs"
@@ -363,6 +361,5 @@
 			"end": "--%?>",
 			"name": "comment.block.biml"
 		}
-	},
-	"scopeName": "source.biml"
+	}
 }

@@ -1,29 +1,34 @@
-<!-- This will be with a VB heading to use the VB language. -->
-
 <#@ template language="VB" tier="2" #>
 
 
-<Biml xmlns="http://schemas.varigence.com/biml.xsd">
-  <Packages>
-    <Package Name="My Package Driver" ConstraintMode="Linear" AutoCreateConfigurationsType="None">
-      <Tasks>
-        <% foreach (var package in RootNode.Packages) { %>
-        <ExecutePackage Name="Run <#=package.Name#>">
-          <Package PackageName='<#=package.Name#>' />
-        </ExecutePackage>
-        <% } %>
-      </Tasks>
-    </Package>
-  </Packages>
-</Biml>
-
-
-<#
- If IsPrime Then
-    foundPrime = prime_possible
+<%=
+    If IsPrime Then
+      foundPrime = prime_possible
     If CurrentprimeSequence Mod 100000 = 0 Then
       Debug.Print(CStr(CurrentprimeSequence) + " " + CStr(foundPrime) + " " + sw.Elapsed().ToString)
     End If
       CurrentprimeSequence += 1
-  End If 
-#>
+    End If  
+%>
+
+<project>
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="oata.HelloWorld"/>
+            </manifest>
+            <%        System.out.println("Hello Java");  %>
+        </jar>
+    </target>
+    <!-- The stuff below was added for extra tokenizer testing -->
+   <character id="Lucy">
+        <hr:name>Lucy</hr:name>
+        <hr:born>1952-03-03</hr:born>
+        <qualification>bossy, crabby and selfish</qualification>
+   </character>
+    <VisualState.Setters>
+        <Setter Target="inputPanel.Orientation" Value="Vertical"/>
+        <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
+    </VisualState.Setters>
+</project>
