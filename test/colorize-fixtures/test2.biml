@@ -1,5 +1,6 @@
 
 
+
 <%=
     // A Hello World! program in C#.
 using System;
@@ -18,6 +19,8 @@ namespace HelloWorld
     }
 }
 %>
+
+<#@ template language="C#" tier="2" #>
 
 <project>
     <target name="jar">

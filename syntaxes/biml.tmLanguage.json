@@ -4,8 +4,8 @@
 		"If you want to provide a fix or improvement, please create a pull request against the original repository.",
 		"Once accepted there, we are happy to receive an update request."
 	],
-	"scopeName": "source.biml.cs",
-	"name": "bimlcs",
+	"scopeName": "source.biml",
+	"name": "biml",
 	"fileTypes": [
 		"biml"
 	],
@@ -105,6 +105,9 @@
 			"name": "meta.tag.no-content.biml",
 			"patterns": [
 				{
+					"include": "#biml"
+				},
+				{
 					"include": "#tagStuff"
 				}
 			]
@@ -143,45 +146,31 @@
 			"include": "#bare-ampersand"
 		},
 		{
-			"begin": "<%@",
+			"begin": "<#@",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.section.embedded.begin.biml"
+					"name": "punctuation.section.embedded.nugget.begin.biml"
 				}
 			},
-			"end": "%>",
+			"end": "#>",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.section.embedded.end.biml"
+					"name": "punctuation.section.embedded.nugget.end.biml"
 				}
 			},
 			"name": "source.cs-props.embedded.biml",
 			"patterns": [
 				{
-					"match": "page|include|taglib",
+					"match": "template|assembly",
 					"name": "keyword.other.page-props.biml"
+				},
+				{
+					"include": "#tagStuff"
 				}
 			]
 		},
 		{
-			"begin": "<%[!=]?(?!--)",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.begin.biml"
-				}
-			},
-			"end": "(?!--)%>",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.section.embedded.end.biml"
-				}
-			},
-			"name": "source.cs.embedded.biml",
-			"patterns": [
-				{
-					"include": "source.cs"
-				}
-			]
+			"include": "#biml"
 		},
 		{
 			"begin": "<!\\[CDATA\\[",
@@ -248,6 +237,9 @@
 			},
 			"name": "string.quoted.double.biml",
 			"patterns": [
+				{
+					"include": "#biml"
+				},
 				{
 					"include": "#entity"
 				},
@@ -348,6 +340,26 @@
 				},
 				{
 					"include": "#singlequotedString"
+				}
+			]
+		},
+		"biml": {
+			"begin": "<#[+=]?",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.nugget.begin.biml"
+				}
+			},
+			"end": "#>",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.section.embedded.nugget.end.biml"
+				}
+			},
+			"name": "source.cs.embedded.biml",
+			"patterns": [
+				{
+					"include": "source.cs"
 				}
 			]
 		},

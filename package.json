@@ -13,27 +13,15 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "bimlcs",
+            "id": "biml",
             "aliases": ["Biml", "biml"],
-            "extensions": [".biml"],
-            "configuration": "./biml.configuration.json"
-        },
-        {
-            "id": "bimlvb",
-            "aliases": ["Biml", "biml"],
-            "firstLine" : "(\\<#@\\s+template\\s+language=\"VB\")|(\\<#@\\s+template\\s+language='VB')",
             "extensions": [".biml"],
             "configuration": "./biml.configuration.json"
         }],
         "grammars": [{
-            "language": "bimlcs",
-            "scopeName": "source.biml.cs",
-            "path": "./syntaxes/bimlcs.tmLanguage.json"
-        },
-        {
-            "language": "bimlvb",
-            "scopeName": "source.biml.vb",
-            "path": "./syntaxes/bimlvb.tmLanguage.json"
+            "language": "biml",
+            "scopeName": "source.biml",
+            "path": "./syntaxes/biml.tmLanguage.json"
         }],
         "snippets": [
             {

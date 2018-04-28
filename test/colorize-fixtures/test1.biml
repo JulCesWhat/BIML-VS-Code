@@ -15,17 +15,17 @@
 <project>
     <target name="jar">
         <mkdir dir="build/jar"/>
-        <jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+        <jar destfile="build/jar/HelloWorld.jar <#=capi#>" basedir="build/classes">
             <manifest>
                 <attribute name="Main-Class" value="oata.HelloWorld"/>
             </manifest>
-            <#        Console.WriteLine("Press any key to exit.");  #>
+            <#+        Console.WriteLine("Press any key to exit.");  #>
         </jar>
     </target>
     <!-- The stuff below was added for extra tokenizer testing -->
    <character id="Lucy">
         <hr:name>Lucy</hr:name>
-        <hr:born>1952-03-03</hr:born>
+        <hr:born><#=capi#></hr:born>
         <qualification>bossy, crabby and selfish</qualification>
    </character>
     <VisualState.Setters>
