@@ -15,7 +15,7 @@
 <project>
     <target name="jar">
         <mkdir dir="build/jar"/>
-        <jar destfile="build/jar/HelloWorld.jar <#=capi#>" basedir="build/classes">
+        <jar destfile="build/jar/HelloWorld.jar <#+ Console.WriteLine("hi"); #>" basedir="build/classes">
             <manifest>
                 <attribute name="Main-Class" value="oata.HelloWorld"/>
             </manifest>

@@ -309,6 +309,9 @@
 			"name": "string.quoted.single.biml",
 			"patterns": [
 				{
+					"include": "#biml"
+				},
+				{
 					"include": "#entity"
 				},
 				{
