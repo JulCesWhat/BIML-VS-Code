@@ -1446,7 +1446,7 @@
 					"name": "punctuation.curlybrace.open.cs"
 				}
 			},
-			"end": "\\}",
+			"end": "\\}|\\s",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.curlybrace.close.cs"
@@ -1630,7 +1630,7 @@
 					"name": "keyword.control.conditional.if.cs"
 				}
 			},
-			"end": "(?<=\\})|(?=;)",
+			"end": "(?<=\\})|(?=;)|(?=\\s)",
 			"patterns": [
 				{
 					"begin": "\\(",
@@ -1663,7 +1663,7 @@
 					"name": "keyword.control.conditional.else.cs"
 				}
 			},
-			"end": "(?<=\\})|(?=;)",
+			"end": "(?<=\\})|(?=;)|(?=\\s)",
 			"patterns": [
 				{
 					"include": "#statement"
@@ -1677,7 +1677,7 @@
 					"name": "keyword.control.switch.cs"
 				}
 			},
-			"end": "(?<=\\})",
+			"end": "(?<=\\})|(?=\\s)",
 			"patterns": [
 				{
 					"begin": "\\(",
@@ -1763,7 +1763,7 @@
 					"name": "keyword.control.loop.do.cs"
 				}
 			},
-			"end": "(?=;|})",
+			"end": "(?=;|}|(?=\\s))",
 			"patterns": [
 				{
 					"include": "#statement"
@@ -1777,7 +1777,7 @@
 					"name": "keyword.control.loop.while.cs"
 				}
 			},
-			"end": "(?<=\\})|(?=;)",
+			"end": "(?<=\\})|(?=;)|(?=\\s)",
 			"patterns": [
 				{
 					"begin": "\\(",
@@ -1810,7 +1810,7 @@
 					"name": "keyword.control.loop.for.cs"
 				}
 			},
-			"end": "(?<=\\})|(?=;)",
+			"end": "(?<=\\})|(?=;)|(?=\\s)",
 			"patterns": [
 				{
 					"begin": "\\(",
@@ -1852,7 +1852,7 @@
 					"name": "keyword.control.loop.foreach.cs"
 				}
 			},
-			"end": "(?<=\\})|(?=;)",
+			"end": "(?<=\\})|(?=;)|(?=\\s)",
 			"patterns": [
 				{
 					"begin": "\\(",
