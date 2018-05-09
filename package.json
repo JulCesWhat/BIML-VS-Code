@@ -5,7 +5,7 @@
     "version": "0.0.1",
     "publisher": "Varigence",
     "engines": {
-        "vscode": "^1.19.0"
+        "vscode": "*"
     },
     "icon": "./images/bimlIcon.png",
     "categories": [
@@ -13,12 +13,21 @@
     ],
     "contributes": {
         "languages": [{
+            "id": "bimlcs",
+            "aliases": [],
+            "extensions": [".bimlcs"],
+            "configuration": "./bimlcs.configuration.json"
+        }, {
             "id": "biml",
             "aliases": ["Biml", "biml"],
             "extensions": [".biml"],
             "configuration": "./biml.configuration.json"
         }],
         "grammars": [{
+            "language": "bimlcs",
+            "scopeName": "source.bimlcs",
+            "path": "./syntaxes/bimlcs.tmLanguage.json"
+        },{
             "language": "biml",
             "scopeName": "source.biml",
             "path": "./syntaxes/biml.tmLanguage.json"

@@ -362,7 +362,7 @@
 			"name": "source.cs.embedded.biml",
 			"patterns": [
 				{
-					"include": "source.cs"
+					"include": "source.bimlcs"
 				}
 			]
 		},
