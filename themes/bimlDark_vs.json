@@ -322,6 +322,15 @@
 			}
 		},
 		{
+			"scope": [
+				"punctuation.section.embedded.nugget.begin.biml",
+				"punctuation.section.embedded.nugget.end.biml"
+			],
+			"settings": {
+				"foreground": "#d8cb1b"
+			}
+		},
+		{
 			"scope": "support.function.git-rebase",
 			"settings": {
 				"foreground": "#9cdcfe"

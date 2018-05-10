@@ -367,13 +367,24 @@
 			]
 		},
 		"comments": {
-			"begin": "<[!%]--",
-			"captures": {
-				"0": {
+			"begin": "(<#)(\\*)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.section.embedded.nugget.begin.biml"
+				},
+				"2": {
 					"name": "punctuation.definition.comment.biml"
 				}
 			},
-			"end": "--%?>",
+			"end": "(\\*)(#>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.biml"
+				},
+				"2": {
+					"name": "punctuation.section.embedded.nugget.end.biml"
+				}
+			},
 			"name": "comment.block.biml"
 		}
 	}
