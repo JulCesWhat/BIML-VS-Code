@@ -9,7 +9,8 @@
     },
     "icon": "./images/bimlIcon.png",
     "categories": [
-        "Languages"
+        "Programming Languages",
+        "Themes"
     ],
     "contributes": {
         "languages": [{
@@ -32,11 +33,16 @@
             "scopeName": "source.biml",
             "path": "./syntaxes/biml.tmLanguage.json"
         }],
-        "snippets": [
+        "themes": [
             {
-				"language": "biml",
-				"path": "./snippets/snippets.json"
-			}
+                "label": "BIML Light",
+                "uiTheme": "vs",
+                "path": "./themes/bimlLight_plus.json"
+            },{
+                "label": "BIML Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/bimlDark_plus.json"
+            }
         ]
     }
 }
