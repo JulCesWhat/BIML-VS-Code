@@ -346,7 +346,7 @@
 				"punctuation.section.embedded.nugget.end.biml"
 			],
 			"settings": {
-				"foreground": "#cfcc23"
+				"foreground": "#000000"
 			}
 		},
 		{
